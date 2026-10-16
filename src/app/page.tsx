@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { 
   ShieldAlert, 
   Crosshair, 
@@ -105,20 +106,20 @@ export default function Home() {
           </div>
 
           <nav className="hidden md:flex items-center gap-8 text-sm font-semibold tracking-wider uppercase text-zinc-300">
-            <a href="#about" className="hover:text-amber-400 transition-colors">O'yin Haqida</a>
-            <a href="#maps" className="hover:text-amber-400 transition-colors">Xaritalar</a>
-            <a href="#weapons" className="hover:text-amber-400 transition-colors">Qurollar</a>
-            <a href="#tournaments" className="hover:text-amber-400 transition-colors">Turnirlar</a>
-            <a href="#system" className="hover:text-amber-400 transition-colors">Talablar</a>
+            <Link href="/about" className="hover:text-amber-400 transition-colors">O'yin Haqida</Link>
+            <Link href="/maps" className="hover:text-amber-400 transition-colors">Xaritalar</Link>
+            <Link href="/weapons" className="hover:text-amber-400 transition-colors">Qurollar</Link>
+            <Link href="/tournaments" className="hover:text-amber-400 transition-colors">Turnirlar</Link>
+            <Link href="/requirements" className="hover:text-amber-400 transition-colors">Talablar</Link>
           </nav>
 
           <div className="hidden md:flex items-center gap-4">
-            <a 
-              href="#download" 
+            <Link 
+              href="/download" 
               className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-black font-extrabold px-6 py-2.5 rounded-md text-sm uppercase tracking-wider transition-all shadow-lg shadow-amber-500/25 active:scale-95"
             >
               <Download className="w-4 h-4" /> Yuklab Olish
-            </a>
+            </Link>
           </div>
 
           <button 
@@ -132,18 +133,18 @@ export default function Home() {
         {/* Mobile menu dropdown */}
         {mobileMenuOpen && (
           <div className="md:hidden bg-zinc-950 border-b border-zinc-800 px-6 py-6 flex flex-col gap-4 text-sm font-semibold uppercase tracking-wider">
-            <a onClick={() => setMobileMenuOpen(false)} href="#about" className="text-zinc-300 hover:text-amber-400">O'yin Haqida</a>
-            <a onClick={() => setMobileMenuOpen(false)} href="#maps" className="text-zinc-300 hover:text-amber-400">Xaritalar</a>
-            <a onClick={() => setMobileMenuOpen(false)} href="#weapons" className="text-zinc-300 hover:text-amber-400">Qurollar</a>
-            <a onClick={() => setMobileMenuOpen(false)} href="#tournaments" className="text-zinc-300 hover:text-amber-400">Turnirlar</a>
-            <a onClick={() => setMobileMenuOpen(false)} href="#system" className="text-zinc-300 hover:text-amber-400">Talablar</a>
-            <a 
+            <Link onClick={() => setMobileMenuOpen(false)} href="/about" className="text-zinc-300 hover:text-amber-400">O'yin Haqida</Link>
+            <Link onClick={() => setMobileMenuOpen(false)} href="/maps" className="text-zinc-300 hover:text-amber-400">Xaritalar</Link>
+            <Link onClick={() => setMobileMenuOpen(false)} href="/weapons" className="text-zinc-300 hover:text-amber-400">Qurollar</Link>
+            <Link onClick={() => setMobileMenuOpen(false)} href="/tournaments" className="text-zinc-300 hover:text-amber-400">Turnirlar</Link>
+            <Link onClick={() => setMobileMenuOpen(false)} href="/requirements" className="text-zinc-300 hover:text-amber-400">Talablar</Link>
+            <Link 
               onClick={() => setMobileMenuOpen(false)} 
-              href="#download" 
+              href="/download" 
               className="w-full text-center bg-amber-500 text-black font-extrabold py-3 rounded-md uppercase"
             >
               Yuklab Olish
-            </a>
+            </Link>
           </div>
         )}
       </header>
@@ -173,18 +174,18 @@ export default function Home() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a 
-              href="#download" 
+            <Link 
+              href="/download" 
               className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-amber-500 hover:bg-amber-400 text-black text-base font-extrabold px-8 py-4 rounded-md tracking-wider uppercase transition-all shadow-xl shadow-amber-500/30 hover:scale-105 active:scale-95"
             >
               <Gamepad2 className="w-5 h-5" /> Hozir Bepul O'ynang
-            </a>
-            <a 
-              href="#tournaments" 
+            </Link>
+            <Link 
+              href="/tournaments" 
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-zinc-700 hover:border-zinc-500 bg-zinc-900/80 hover:bg-zinc-800 text-white text-base font-bold px-8 py-4 rounded-md tracking-wider uppercase transition-all hover:scale-105 active:scale-95"
             >
               <Trophy className="w-5 h-5 text-amber-400" /> Turnirlarga Qo'shilish
-            </a>
+            </Link>
           </div>
 
           {/* Quick Stats */}
@@ -270,9 +271,17 @@ export default function Home() {
                 Afsonaviy Xaritalar
               </h2>
             </div>
-            <p className="text-zinc-400 max-w-md text-sm">
-              Har bir xarita o'ziga xos iqlim, relyef va taktika talab qiladi. Qayerga tushishni to'g'ri tanlang!
-            </p>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+              <p className="text-zinc-400 max-w-md text-sm">
+                Har bir xarita o'ziga xos iqlim, relyef va taktika talab qiladi. Qayerga tushishni to'g'ri tanlang!
+              </p>
+              <Link 
+                href="/maps" 
+                className="inline-flex items-center gap-2 self-start sm:self-auto text-amber-400 hover:text-amber-300 font-bold text-xs uppercase tracking-wider bg-zinc-900 border border-zinc-800 hover:border-amber-500/50 px-4 py-2.5 rounded-lg transition-all"
+              >
+                Barcha Xaritalar <ChevronRight className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -306,16 +315,26 @@ export default function Home() {
       {/* WEAPONS ARSENAL */}
       <section id="weapons" className="py-24 bg-[#0a0c12]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-mono font-bold tracking-widest text-amber-400 uppercase bg-amber-500/10 px-3 py-1 rounded">
-              Arsenal & Qurol-Yaroq
-            </span>
-            <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white uppercase mt-4">
-              G'alabani Belgilovchi Qurollar
-            </h2>
-            <p className="mt-4 text-zinc-400">
-              O'zingizga mos qurolni toping va jang maydonida tengsiz ustunlikka erishing.
-            </p>
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div>
+              <span className="text-xs font-mono font-bold tracking-widest text-amber-400 uppercase bg-amber-500/10 px-3 py-1 rounded">
+                Arsenal & Qurol-Yaroq
+              </span>
+              <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white uppercase mt-4">
+                G'alabani Belgilovchi Qurollar
+              </h2>
+            </div>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+              <p className="text-zinc-400 max-w-md text-sm">
+                O'zingizga mos qurolni toping va jang maydonida tengsiz ustunlikka erishing.
+              </p>
+              <Link 
+                href="/weapons" 
+                className="inline-flex items-center gap-2 self-start sm:self-auto text-amber-400 hover:text-amber-300 font-bold text-xs uppercase tracking-wider bg-zinc-900 border border-zinc-800 hover:border-amber-500/50 px-4 py-2.5 rounded-lg transition-all"
+              >
+                To'liq Arsenal <ChevronRight className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -380,12 +399,12 @@ export default function Home() {
                 Turnirlar & Sovrinlar
               </h2>
             </div>
-            <a 
-              href="#register" 
+            <Link 
+              href="/tournaments" 
               className="inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 font-bold text-sm tracking-wide uppercase transition-colors"
             >
               Barcha Turnirlar Jadvali <ChevronRight className="w-4 h-4" />
-            </a>
+            </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -569,21 +588,19 @@ export default function Home() {
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
+              <Link 
+                href="/download" 
+                className="bg-black hover:bg-zinc-900 text-white font-extrabold px-6 py-3.5 rounded-lg text-sm tracking-wider uppercase transition-all shadow-lg hover:scale-105 active:scale-95 flex items-center gap-2"
+              >
+                <Download className="w-4 h-4" /> Barcha Versiyalar
+              </Link>
               <a 
                 href="https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS/" 
                 target="_blank" 
                 rel="noreferrer"
-                className="bg-black hover:bg-zinc-900 text-white font-extrabold px-6 py-3.5 rounded-lg text-sm tracking-wider uppercase transition-all shadow-lg hover:scale-105 active:scale-95 flex items-center gap-2"
-              >
-                <Monitor className="w-4 h-4" /> Steam (PC)
-              </a>
-              <a 
-                href="https://play.google.com/store/apps/details?id=com.tencent.ig" 
-                target="_blank" 
-                rel="noreferrer"
                 className="bg-zinc-900 hover:bg-black text-white font-extrabold px-6 py-3.5 rounded-lg text-sm tracking-wider uppercase transition-all shadow-lg hover:scale-105 active:scale-95 flex items-center gap-2"
               >
-                <Smartphone className="w-4 h-4" /> Google Play
+                <Monitor className="w-4 h-4" /> Steam (PC)
               </a>
             </div>
           </div>
@@ -605,9 +622,9 @@ export default function Home() {
           </p>
 
           <div className="flex items-center gap-6 text-xs uppercase font-mono tracking-wider">
-            <a href="#about" className="hover:text-amber-400 transition-colors">Biz Haqimizda</a>
-            <a href="#system" className="hover:text-amber-400 transition-colors">Yordam</a>
-            <a href="#tournaments" className="hover:text-amber-400 transition-colors">Qoidalar</a>
+            <Link href="/about" className="hover:text-amber-400 transition-colors">Biz Haqimizda</Link>
+            <Link href="/requirements" className="hover:text-amber-400 transition-colors">Talablar & Yordam</Link>
+            <Link href="/tournaments" className="hover:text-amber-400 transition-colors">Turnirlar</Link>
           </div>
         </div>
       </footer>
