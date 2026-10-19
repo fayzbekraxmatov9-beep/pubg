@@ -94,7 +94,7 @@ export default function Home() {
       <header className="sticky top-0 z-50 backdrop-blur-md bg-[#08090df0] border-b border-zinc-800/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-tr from-amber-600 to-yellow-400 flex items-center justify-center font-black text-black text-2xl tracking-tighter shadow-lg shadow-amber-500/20">
+            <div className="w-10 h-10 rounded-lg bg-linear-to-tr from-amber-600 to-yellow-400 flex items-center justify-center font-black text-black text-2xl tracking-tighter shadow-lg shadow-amber-500/20">
               P
             </div>
             <div>
@@ -116,7 +116,7 @@ export default function Home() {
           <div className="hidden md:flex items-center gap-4">
             <Link 
               href="/download" 
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-black font-extrabold px-6 py-2.5 rounded-md text-sm uppercase tracking-wider transition-all shadow-lg shadow-amber-500/25 active:scale-95"
+              className="inline-flex items-center gap-2 bg-linear-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-black font-extrabold px-6 py-2.5 rounded-md text-sm uppercase tracking-wider transition-all shadow-lg shadow-amber-500/25 active:scale-95"
             >
               <Download className="w-4 h-4" /> Yuklab Olish
             </Link>
@@ -157,8 +157,8 @@ export default function Home() {
             backgroundImage: "url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1920&q=80')"
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#07080c] via-[#07080c]/60 to-transparent" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-500/10 via-transparent to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-linear-to-t from-[#07080c] via-[#07080c]/60 to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-amber-500/10 via-transparent to-transparent pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center z-10">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-400 font-mono text-xs uppercase tracking-widest mb-6 animate-pulse">
@@ -166,7 +166,7 @@ export default function Home() {
           </div>
 
           <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black uppercase tracking-tight text-white mb-6">
-            YERGA TUSH. <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-600">QUROLLAN.</span> OMON QOL.
+            YERGA TUSH. <span className="text-transparent bg-clip-text bg-linear-to-r from-amber-400 via-yellow-400 to-amber-600">QUROLLAN.</span> OMON QOL.
           </h1>
 
           <p className="max-w-2xl mx-auto text-lg sm:text-xl text-zinc-300 font-normal leading-relaxed mb-10">
@@ -226,7 +226,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-b from-zinc-900/90 to-zinc-950 p-8 rounded-xl border border-zinc-800 hover:border-amber-500/50 transition-all group">
+            <div className="bg-linear-to-b from-zinc-900/90 to-zinc-950 p-8 rounded-xl border border-zinc-800 hover:border-amber-500/50 transition-all group">
               <div className="w-14 h-14 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center mb-6 group-hover:bg-amber-500 group-hover:text-black transition-all">
                 <Crosshair className="w-8 h-8" />
               </div>
@@ -236,7 +236,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="bg-gradient-to-b from-zinc-900/90 to-zinc-950 p-8 rounded-xl border border-zinc-800 hover:border-amber-500/50 transition-all group">
+            <div className="bg-linear-to-b from-zinc-900/90 to-zinc-950 p-8 rounded-xl border border-zinc-800 hover:border-amber-500/50 transition-all group">
               <div className="w-14 h-14 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center mb-6 group-hover:bg-amber-500 group-hover:text-black transition-all">
                 <Users className="w-8 h-8" />
               </div>
@@ -246,7 +246,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="bg-gradient-to-b from-zinc-900/90 to-zinc-950 p-8 rounded-xl border border-zinc-800 hover:border-amber-500/50 transition-all group">
+            <div className="bg-linear-to-b from-zinc-900/90 to-zinc-950 p-8 rounded-xl border border-zinc-800 hover:border-amber-500/50 transition-all group">
               <div className="w-14 h-14 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center mb-6 group-hover:bg-amber-500 group-hover:text-black transition-all">
                 <ShieldAlert className="w-8 h-8" />
               </div>
@@ -288,13 +288,13 @@ export default function Home() {
             {maps.map((map, idx) => (
               <div 
                 key={idx} 
-                className="group relative rounded-xl overflow-hidden border border-zinc-800 bg-zinc-900 hover:border-amber-500 transition-all duration-300 flex flex-col justify-end min-h-[380px]"
+                className="group relative rounded-xl overflow-hidden border border-zinc-800 bg-zinc-900 hover:border-amber-500 transition-all duration-300 flex flex-col justify-end min-h-95"
               >
                 <div 
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
                   style={{ backgroundImage: `url('${map.image}')` }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black via-black/60 to-transparent" />
 
                 <div className="relative p-6 z-10">
                   <div className="flex items-center justify-between mb-2">
@@ -357,7 +357,7 @@ export default function Home() {
                       <span className="text-white font-bold">{w.damage}%</span>
                     </div>
                     <div className="w-full bg-zinc-800 h-2 rounded-full overflow-hidden">
-                      <div className="bg-gradient-to-r from-amber-600 to-amber-400 h-full rounded-full" style={{ width: `${w.damage}%` }} />
+                      <div className="bg-linear-to-r from-amber-600 to-amber-400 h-full rounded-full" style={{ width: `${w.damage}%` }} />
                     </div>
                   </div>
 
@@ -367,7 +367,7 @@ export default function Home() {
                       <span className="text-white font-bold">{w.rate}%</span>
                     </div>
                     <div className="w-full bg-zinc-800 h-2 rounded-full overflow-hidden">
-                      <div className="bg-gradient-to-r from-amber-600 to-amber-400 h-full rounded-full" style={{ width: `${w.rate}%` }} />
+                      <div className="bg-linear-to-r from-amber-600 to-amber-400 h-full rounded-full" style={{ width: `${w.rate}%` }} />
                     </div>
                   </div>
 
@@ -377,7 +377,7 @@ export default function Home() {
                       <span className="text-white font-bold">{w.range}%</span>
                     </div>
                     <div className="w-full bg-zinc-800 h-2 rounded-full overflow-hidden">
-                      <div className="bg-gradient-to-r from-amber-600 to-amber-400 h-full rounded-full" style={{ width: `${w.range}%` }} />
+                      <div className="bg-linear-to-r from-amber-600 to-amber-400 h-full rounded-full" style={{ width: `${w.range}%` }} />
                     </div>
                   </div>
                 </div>
@@ -578,7 +578,7 @@ export default function Home() {
           )}
 
           {/* Download CTA banner */}
-          <div id="download" className="mt-12 bg-gradient-to-r from-amber-600 via-amber-500 to-yellow-500 rounded-2xl p-8 sm:p-12 text-black flex flex-col md:flex-row items-center justify-between gap-8">
+          <div id="download" className="mt-12 bg-linear-to-r from-amber-600 via-amber-500 to-yellow-500 rounded-2xl p-8 sm:p-12 text-black flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
               <h3 className="text-3xl sm:text-4xl font-black uppercase tracking-tight">
                 G'alaba Qozonishga Tayyormisiz?
